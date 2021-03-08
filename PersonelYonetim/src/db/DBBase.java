@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import util.Sabitler;
 import util.Util;
 
 public class DBBase {
@@ -13,11 +14,7 @@ public class DBBase {
 
 	protected Connection getConnection() throws SQLException {
 		if (conn.get() == null) {
-			try {
-				Class.forName("com.mysql.cj.jdbc.Driver");
-			} catch (ClassNotFoundException e) {
-			}
-			conn.set(DriverManager.getConnection(Util.getDBProp("url"), Util.getDBProp("username"), Util.getDBProp("password")));
+			conn.set(DriverManager.getConnection(Util.getDBProp(Sabitler.DB_URL), Util.getDBProp(Sabitler.DB_USERNAME), Util.getDBProp(Sabitler.DB_PASSWORD)));
 			conn.get().setAutoCommit(false);
 		}
 		return conn.get();

@@ -11,12 +11,19 @@
 	}
 	function sil(adresId) {
 		if (confirm('Bu adresi silmek istediðinizden emin misiniz?')) {
-			fetch('<c:url value="/personelAdres" />?id='+adresId, {method: 'DELETE'}
-			).then(
-				request => {
-					window.location.href="<c:url value="/personelAdres" />?id=${param.id}";
+			fetch('<c:url value="/personelAdres" />', 
+				{
+					method: 'DELETE',
+					body: JSON.stringify({adresId})
 				}
-			);
+			).then(data => data.json())
+			.then(cevap => {
+				if (cevap.sonuc === 'ok') {
+					window.location.href="<c:url value="/personelAdres" />?id=${param.id}";
+				} else {
+					alert(cevap.hata);
+				}
+			});
 		}
 	}
 </script>
@@ -25,15 +32,20 @@
 <c:if test="${not empty mesaj}">
 	<font color="blue"><b>${mesaj}</b></font>
 </c:if>
+<c:if test="${not empty hata}">
+	<font color="red"><b>${hata}</b></font>
+</c:if>
 <table border="1">
  <tr>
  	<th>Adres</th>
+ 	<th>&nbsp;</th>
  	<th>&nbsp;</th>
  </tr>
  <c:forEach items="${liste}" var="personelAdres">
  	<tr>
  		<td>${personelAdres.adres}</td>
  		<td><a href="#" onclick="sil(${personelAdres.id})">Sil</a></td>
+ 		<td><a href="<c:url value="/personelAdres" />?islem=guncelle&id=${personelAdres.id}">Deðiþtir</a></td>
  	</tr>
  </c:forEach>
 </table>

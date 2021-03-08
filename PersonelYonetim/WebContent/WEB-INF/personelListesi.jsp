@@ -7,6 +7,9 @@
 <title>Personel Listesi</title>
 </head>
 <body>
+<c:if test="${not empty hata}">
+	<font color="red"><b>${hata}</b></font>
+</c:if>
 <table border="1">
  <tr>
  	<th>Personel Adý</th>

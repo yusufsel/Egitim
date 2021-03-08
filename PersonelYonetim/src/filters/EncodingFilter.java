@@ -10,16 +10,14 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 
-import db.DBBase;
-
 @WebFilter("/*")
-public class ConnectionFilter implements Filter {
+public class EncodingFilter implements Filter {
 	public void destroy() {
 	}
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+		request.setCharacterEncoding("ISO-8859-9");
 		chain.doFilter(request, response);
-		DBBase.closeConnection();
 	}
 
 	public void init(FilterConfig fConfig) throws ServletException {

@@ -3,14 +3,14 @@ package db;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import beans.Personel;
+import exceptions.db.ReadException;
 
 public class PersonelDB extends DBBase {
-	public List<Personel> getPersonelListesi() {
+	public List<Personel> getPersonelListesi() throws ReadException {
 		List<Personel> personeller = new ArrayList<Personel>();
 		Connection conn = null;
 		PreparedStatement stmt = null;
@@ -27,8 +27,8 @@ public class PersonelDB extends DBBase {
 				personel.setSoyadi(rs.getString("soyadi"));
 				personeller.add(personel);
 			}
-		} catch (SQLException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
+			throw new ReadException("personel", e);
 		} finally {
 			close(rs, stmt);
 		}
