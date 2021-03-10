@@ -4,17 +4,22 @@
 <html>
 <head>
 <meta charset="ISO-8859-9">
-<title>Giriş Ekranı</title>
+<title>Kullanıcı Yaratma Ekranı</title>
 </head>
 <body>
-<c:if test="${not empty mesaj}">
-<font color="blue"><b>${mesaj}</b></font>
-</c:if>
 <c:if test="${not empty hata}">
 <font color="red"><b>${hata}</b></font>
 </c:if>
-<form action="<c:url value="/giris" />" method="post">
+<form action="<c:url value="/kullaniciYarat" />" method="post">
   <table>
+    <tr>
+      <td>Adı: </td>
+      <td><input type="text" name="adi" /></td>
+    </tr>
+    <tr>
+      <td>Soyadı: </td>
+      <td><input type="text" name="soyadi" /></td>
+    </tr>
     <tr>
       <td>T.C No: </td>
       <td><input type="text" name="tcno" /></td>
@@ -24,8 +29,8 @@
       <td><input type="password" name="sifre" /></td>
     </tr>
   </table>
-  <input type="submit" value="Giriş Yap" />
+  <input type="submit" value="Kullanıcı Yarat" />
 </form>
-<a href="<c:url value="/kullaniciYarat.jsp" />">Kullanıcı Yarat</a>
+<a href="<c:url value="/" />">Geri</a>
 </body>
 </html>

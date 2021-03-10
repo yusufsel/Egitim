@@ -9,19 +9,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
-
-import lombok.AllArgsConstructor;
 
 /**
  * The persistent class for the personel database table.
  * 
  */
 @Entity
-@AllArgsConstructor
 @NamedQuery(name = "Personel.findAll", query = "SELECT p FROM Personel p")
-@Table(uniqueConstraints = @UniqueConstraint(columnNames = "tcno"))
 public class Personel implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -39,7 +33,7 @@ public class Personel implements Serializable {
 
 	// bi-directional many-to-one association to PersonelAdre
 	@OneToMany(mappedBy = "personel")
-	private List<PersonelAdre> personelAdres;
+	private List<PersonelAdres> personelAdres;
 
 	public Personel() {
 	}
@@ -84,26 +78,12 @@ public class Personel implements Serializable {
 		this.tcno = tcno;
 	}
 
-	public List<PersonelAdre> getPersonelAdres() {
-		return this.personelAdres;
+	public List<PersonelAdres> getPersonelAdres() {
+		return personelAdres;
 	}
 
-	public void setPersonelAdres(List<PersonelAdre> personelAdres) {
+	public void setPersonelAdres(List<PersonelAdres> personelAdres) {
 		this.personelAdres = personelAdres;
-	}
-
-	public PersonelAdre addPersonelAdre(PersonelAdre personelAdre) {
-		getPersonelAdres().add(personelAdre);
-		personelAdre.setPersonel(this);
-
-		return personelAdre;
-	}
-
-	public PersonelAdre removePersonelAdre(PersonelAdre personelAdre) {
-		getPersonelAdres().remove(personelAdre);
-		personelAdre.setPersonel(null);
-
-		return personelAdre;
 	}
 
 }
