@@ -12,5 +12,6 @@
         <mapping class="entities.Birlik"/>
         <mapping class="entities.Personel"/>
         <mapping class="entities.PersonelAdres"/>
+        
     </session-factory>
 </hibernate-configuration>
