@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-9" pageEncoding="ISO-8859-9"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,18 +7,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="<c:url value="/giris" />" method="post">
-<table>
-  <tr>
-    <td>Kullanýcý Adý:</td>
-    <td><input type="text" name="adi" /></td>
-  </tr>
-  <tr>
-    <td>Þifre:</td>
-    <td><input type="password" name="sifre" /></td>
-  </tr>
-</table>
-<input type="submit" value="Giriþ Yap" />
-</form>
+  ${mesaj}
+  <form action="<c:url value="/giris" />" method="post">
+    <table>
+      <tr>
+        <td>Kullanýcý T.C. No :</td>
+        <td><input type="text" name="tcno" /></td>
+      </tr>
+      <tr>
+        <td>Þifre:</td>
+        <td><input type="password" name="sifre" /></td>
+      </tr>
+    </table>
+    <input type="submit" value="Giriþ Yap" />
+  </form>
 </body>
 </html>

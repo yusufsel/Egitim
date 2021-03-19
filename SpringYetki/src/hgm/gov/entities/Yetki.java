@@ -1,28 +1,38 @@
 package hgm.gov.entities;
 
 import java.io.Serializable;
-import javax.persistence.*;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+
+import lombok.ToString;
 
 /**
  * The persistent class for the yetki database table.
  * 
  */
 @Entity
-@NamedQuery(name="Yetki.findAll", query="SELECT y FROM Yetki y")
+@NamedQuery(name = "Yetki.findAll", query = "SELECT y FROM Yetki y")
+@ToString
 public class Yetki implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	@Column(name="yetki_adi")
+	@Column(name = "yetki_adi")
 	private String yetkiAdi;
 
-	//bi-directional many-to-one association to PersonelYetki
-	@OneToMany(mappedBy="yetki")
+	// bi-directional many-to-one association to PersonelYetki
+	@OneToMany(mappedBy = "yetki")
+	@ToString.Exclude
 	private List<PersonelYetki> personelYetkis;
 
 	public Yetki() {

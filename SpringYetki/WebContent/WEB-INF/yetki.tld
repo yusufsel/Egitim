@@ -1,0 +1,14 @@
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>2.0</jsp-version>
+	<short-name>Yetki Kontrolu</short-name>
+
+	<tag>
+		<name>yetki</name>
+		<tag-class>hgm.gov.tag.Yetki</tag-class>
+		<attribute>
+			<name>yetkiId</name>
+		</attribute>
+	</tag>
+
+</taglib>
