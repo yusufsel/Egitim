@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:body>
+  <h:form>
+    <h:panelGrid columns="2">
+      <f:facet name="header">
+        <h:outputText value="Giriş Ekranı" />
+      </f:facet>
+      <h:outputText value="Adınız" />
+      <h:inputText value="#{giris.adi}"/>
+      <h:outputText value="Şifreniz" />
+      <h:inputSecret value="#{giris.sifre}"/>
+      <f:facet name="footer">
+      <h:panelGroup style="display:block; text-align: center; margin-top: 10px">
+        <h:commandButton value="Giriş Yap" action="#{giris.girisYap}" style="margin-right: 10px"/>
+        <h:commandButton value="Adı değiştir" action="#{giris.isimDegistir}" style="margin-left: 10px"/>
+      </h:panelGroup>
+      </f:facet>
+    </h:panelGrid>
+  </h:form>
+</h:body>
+</html>

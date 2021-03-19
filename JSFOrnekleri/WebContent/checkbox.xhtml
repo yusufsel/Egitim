@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:body>
+  <h:form>
+    <h:panelGrid columns="2">
+      Emin misiniz? <h:selectBooleanCheckbox value="#{checkBoxOrnek.chk1}" />
+      Seçenekler: <h:selectManyCheckbox value="#{checkBoxOrnek.chk2}">
+        <f:selectItem itemLabel="1" itemValue="deger1" />
+        <f:selectItem itemLabel="2" itemValue="deger2" />
+        <f:selectItem itemLabel="3" itemValue="deger3" />
+      </h:selectManyCheckbox>
+      <h:commandButton actionListener="#{checkBoxOrnek.oku}" value="Oku" />
+    </h:panelGrid>
+    <h:outputText value="Emin misiniz: #{checkBoxOrnek.chk1}" /><br/> 
+    <h:outputText value="Seçenekler: #{checkBoxOrnek.chk2Oku}" />
+  </h:form>
+  <a href="index.html">Menü</a>
+</h:body>
+</html>

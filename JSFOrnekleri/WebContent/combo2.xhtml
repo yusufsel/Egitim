@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:body>
+  <h:form>
+    <h:panelGrid>
+      <h:selectOneListbox size="1" value="#{comboOrnek2.comboDegeri}">
+        <f:selectItem itemValue="" itemLabel="Seçiniz:" />
+        <f:selectItems value="#{comboOrnek2.degerler}"/>
+      </h:selectOneListbox>
+      <h:commandButton actionListener="#{comboOrnek2.oku}" value="Değeri Oku" />
+      <h:outputText value="Seçilen değer: #{comboOrnek2.comboDegeri}" />
+      <h:commandButton actionListener="#{comboOrnek2.sil}" value="Sil" />
+      <h:commandButton actionListener="#{comboOrnek2.ekle}" value="Seçenek Ekle" />
+    </h:panelGrid>
+  </h:form>
+  <a href="index.html">Menü</a>
+</h:body>
+</html>

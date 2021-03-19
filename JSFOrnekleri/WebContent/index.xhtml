@@ -1,0 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:body>
+<f:loadBundle var="b" basename="hgm.gov.resource.mesajlar" />
+  <h:panelGrid>
+    <h:outputText value="#{mesajBundle.anasayfa_baslik}" />
+    <h:outputFormat value="#{mesajBundle.selamlama}">
+       <f:param value="Levent" />
+    </h:outputFormat>
+    <h:link outcome="combo" value="Combo Örneği" />
+    <h:link outcome="combo2" value="Combo2 Örneği" />
+    <h:link outcome="checkbox" value="Checkbox Örneği" />
+    <h:link outcome="radio" value="Radio button Örneği" />
+    <h:link outcome="datatable" value="Datatable Örneği" />
+  </h:panelGrid>
+</h:body>
+</html>
