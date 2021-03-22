@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+  <link rel="stylesheet" href="css/index.css" />
+</h:head>
+<h:body>
+  <div class="sonuc">
+    <h:outputText value="#{hesap.sonuc}" />
+  </div>
+  <h:form>
+    <h:panelGrid columns="4">
+      <h:commandButton class="tus" value="%" />
+      <h:commandButton class="tus" value="CE" actionListener="#{hesap.silCE}" />
+      <h:commandButton class="tus" value="C" actionListener="#{hesap.silC}" />
+      <h:commandButton class="tus" value="sil" />
+      <h:commandButton class="tus" value="1/x" actionListener="#{hesap.birBolu}" />
+      <h:commandButton class="tus" value="x^2" actionListener="#{hesap.kare}" />
+      <h:commandButton class="tus" value="kök x" actionListener="#{hesap.kok}" />
+      <h:commandButton class="tus" value="/" actionListener="#{hesap.bolme}" />
+
+      <h:commandButton class="tus" value="7" actionListener="#{hesap.tus(7)}" />
+      <h:commandButton class="tus" value="8" actionListener="#{hesap.tus(8)}" />
+      <h:commandButton class="tus" value="9" actionListener="#{hesap.tus(9)}" />
+      <h:commandButton class="tus" value="X" actionListener="#{hesap.carpma}" />
+
+      <h:commandButton class="tus" value="4" actionListener="#{hesap.tus(4)}" />
+      <h:commandButton class="tus" value="5" actionListener="#{hesap.tus(5)}" />
+      <h:commandButton class="tus" value="6" actionListener="#{hesap.tus(6)}" />
+      <h:commandButton class="tus" value="-" actionListener="#{hesap.cikarma}" />
+
+      <h:commandButton class="tus" value="1" actionListener="#{hesap.tus(1)}" />
+      <h:commandButton class="tus" value="2" actionListener="#{hesap.tus(2)}" />
+      <h:commandButton class="tus" value="3" actionListener="#{hesap.tus(3)}" />
+      <h:commandButton class="tus" value="+" actionListener="#{hesap.toplama}" />
+
+      <h:commandButton class="tus" value="+/-" actionListener="#{hesap.isaretDegistir}" />
+      <h:commandButton class="tus" value="0" actionListener="#{hesap.tus(0)}" />
+      <h:commandButton class="tus" value="," />
+      <h:commandButton class="tus" value="=" actionListener="#{hesap.esittir}" />
+    </h:panelGrid>
+  </h:form>
+</h:body>
+</html>
