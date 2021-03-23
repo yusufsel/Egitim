@@ -14,7 +14,8 @@ public class PersonelDAO {
 	private PersonelRepository personelRepository;
 
 	public List<Personel> getPersoneller() {
-		return personelRepository.findAll();
+		List<Personel> liste = personelRepository.findAll();
+		return liste;
 	}
 
 	public Personel getPersonelByTcno(String tcNo) {

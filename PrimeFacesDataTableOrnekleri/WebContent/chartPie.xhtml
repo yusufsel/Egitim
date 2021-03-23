@@ -5,17 +5,9 @@
 </h:head>
 <h:body>
   <h:form>
-    <p:dataTable value="#{dataTable.liste}" var="p" rowKey="#{p.id}">
-      <p:column headerText="Adı">
-        <h:outputText value="#{p.adi}" />
-      </p:column>
-      <p:column headerText="Soyadı">
-        <h:outputText value="#{p.soyadi}" />
-      </p:column>
-      <p:column headerText="T.C. No">
-        <h:outputText value="#{p.tcNo}" />
-      </p:column>
-    </p:dataTable>
+    <div style="width: 500px; heigth: 500px;">
+      <p:pieChart model="#{chartPie.pieModel}" />
+    </div>
   </h:form>
 </h:body>
 </html>

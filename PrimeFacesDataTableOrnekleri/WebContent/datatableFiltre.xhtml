@@ -5,14 +5,14 @@
 </h:head>
 <h:body>
   <h:form>
-    <p:dataTable value="#{dataTable.liste}" var="p" rowKey="#{p.id}">
-      <p:column headerText="Adı">
+    <p:dataTable value="#{dataTableFiltre.liste}" var="p" filteredValue="#{dataTableFiltre.listeFiltreli}">
+      <p:column headerText="Adı" filterBy="#{p.adi}" filterMatchMode="contains">
         <h:outputText value="#{p.adi}" />
       </p:column>
-      <p:column headerText="Soyadı">
+      <p:column headerText="Soyadı" filterBy="#{p.soyadi}" filterMatchMode="contains">
         <h:outputText value="#{p.soyadi}" />
       </p:column>
-      <p:column headerText="T.C. No">
+      <p:column headerText="T.C. No" filterBy="#{p.tcNo}" filterMatchMode="contains">
         <h:outputText value="#{p.tcNo}" />
       </p:column>
     </p:dataTable>

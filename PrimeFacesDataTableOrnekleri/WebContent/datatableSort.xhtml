@@ -5,14 +5,17 @@
 </h:head>
 <h:body>
   <h:form>
-    <p:dataTable value="#{dataTable.liste}" var="p" rowKey="#{p.id}">
-      <p:column headerText="Adı">
+    <p:dataTable value="#{dataTable.liste}" var="p" rowKey="#{p.id}" allowUnsorting="true" sortMode="single">
+      <p:column sortBy="#{p.id}" headerText="Id">
+        <h:outputText value="#{p.id}" />
+      </p:column>
+      <p:column sortBy="#{p.adi}" headerText="Adı">
         <h:outputText value="#{p.adi}" />
       </p:column>
-      <p:column headerText="Soyadı">
+      <p:column sortBy="#{p.soyadi}" headerText="Soyadı">
         <h:outputText value="#{p.soyadi}" />
       </p:column>
-      <p:column headerText="T.C. No">
+      <p:column sortBy="#{p.tcNo}" headerText="T.C. No">
         <h:outputText value="#{p.tcNo}" />
       </p:column>
     </p:dataTable>

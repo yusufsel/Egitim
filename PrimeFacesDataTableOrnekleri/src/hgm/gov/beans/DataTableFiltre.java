@@ -13,8 +13,9 @@ import hgm.gov.service.PersonelService;
 @Named
 @ManagedBean
 @SessionScoped
-public class DataTable {
+public class DataTableFiltre {
 	private List<Personel> liste;
+	private List<Personel> listeFiltreli;
 	@Inject
 	private PersonelService personelService;
 
@@ -27,6 +28,14 @@ public class DataTable {
 
 	public void setListe(List<Personel> liste) {
 		this.liste = liste;
+	}
+
+	public List<Personel> getListeFiltreli() {
+		return listeFiltreli;
+	}
+
+	public void setListeFiltreli(List<Personel> listeFiltreli) {
+		this.listeFiltreli = listeFiltreli;
 	}
 
 }

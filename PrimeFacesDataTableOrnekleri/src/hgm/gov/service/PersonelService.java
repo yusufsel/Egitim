@@ -16,4 +16,5 @@ public class PersonelService {
 	public List<Personel> getPersoneller() {
 		return personelDAO.getPersoneller();
 	}
+
 }

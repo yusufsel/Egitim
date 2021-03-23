@@ -5,17 +5,15 @@
 </h:head>
 <h:body>
   <h:form>
-    <p:dataTable value="#{dataTable.liste}" var="p" rowKey="#{p.id}">
-      <p:column headerText="Adı">
-        <h:outputText value="#{p.adi}" />
+    <p:dataTable id="tablo" value="#{dataTableSatirEkleme.liste}" var="p">
+      <p:column headerText="Id">
+        <h:outputText value="#{p.id}" />
       </p:column>
-      <p:column headerText="Soyadı">
-        <h:outputText value="#{p.soyadi}" />
-      </p:column>
-      <p:column headerText="T.C. No">
-        <h:outputText value="#{p.tcNo}" />
+      <p:column headerText="İsim">
+        <h:outputText value="#{p.isim}" />
       </p:column>
     </p:dataTable>
+    <p:commandButton action="#{dataTableSatirEkleme.ekKayitlar}" update="tablo" value="..." />
   </h:form>
 </h:body>
 </html>

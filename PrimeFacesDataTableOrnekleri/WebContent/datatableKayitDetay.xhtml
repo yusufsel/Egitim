@@ -6,6 +6,9 @@
 <h:body>
   <h:form>
     <p:dataTable value="#{dataTable.liste}" var="p" rowKey="#{p.id}">
+      <p:column style="width:2rem">
+        <p:rowToggler />
+      </p:column>
       <p:column headerText="Adı">
         <h:outputText value="#{p.adi}" />
       </p:column>
@@ -15,6 +18,16 @@
       <p:column headerText="T.C. No">
         <h:outputText value="#{p.tcNo}" />
       </p:column>
+      <p:rowExpansion>
+        <h:panelGrid columns="2">
+          <h:outputText value="Adı:" />
+          <h:outputText value="#{p.adi}" />
+          <h:outputText value="Soyadı:" />
+          <h:outputText value="#{p.soyadi}" />
+          <h:outputText value="T.C. No: " />
+          <h:outputText value="#{p.tcNo}" />
+        </h:panelGrid>
+      </p:rowExpansion>
     </p:dataTable>
   </h:form>
 </h:body>

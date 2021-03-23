@@ -5,7 +5,7 @@
 </h:head>
 <h:body>
   <h:form>
-    <p:dataTable value="#{dataTable.liste}" var="p" rowKey="#{p.id}">
+    <p:dataTable value="#{dataTable.liste}" var="p" rowKey="#{p.id}" draggableColumns="true" showGridlines="true">
       <p:column headerText="Adı">
         <h:outputText value="#{p.adi}" />
       </p:column>
